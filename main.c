@@ -9,17 +9,19 @@ int main(void) {
 
 	printf("Price before apply_tax: %.2f\n", price);
 	apply_tax(price);
-	printf("Price After apply_tax: %.2f\n", price);
+	printf("Price in main: %.2f\n", price);
 
-	printf("Price before apply_discount: %.2f\n", price);
+	printf("\nPrice before apply_discount: %.2f\n", price);
 	if(apply_discount(&price, .10) == 0) {
 		apply_discount(&price, discount);
 	} else {
 		printf("Discount Failed");
 	}
 	printf("Price after apply_discount: %.2f\n", price);
-
+	
+	printf("\nShopping Cart 1:\n");
 	printf("Total = $%.2f\n", calculate_total(3, 10.00, 20.00, 30.00));
+	printf("\nShopping Cart 2: \n");
 	printf("Total = $%.2f\n", calculate_total(5, 5.00, 10.00, 15.00, 20.00, 25.00));
 	
 	

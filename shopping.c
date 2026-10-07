@@ -3,16 +3,16 @@
 #include "shopping.h"
 
 void apply_tax(double price) {
-	price = price - (price * .07);
-	printf("Price with Tax: %.2f\n", price);
+	price = price + (price * .07);
+	printf("Price inside function: %.2f\n", price);
 }
 
-int applyDiscount(double *price, double percent_off) {
+int apply_discount(double *price, double percent_off) {
 	if(price == NULL || *price < 0.0 || percent_off < 0.0) {
 		return DISCOUNT_FAIL;
 	}
 	
-	*price = price - (price * percent_off);
+	*price = *price - (*price * percent_off);
 	return DISCOUNT_OK;
 }
 
